@@ -8,7 +8,7 @@
 
 # get started
 * **npm run dev** 在本地8080端口起测试服务,引用的所有文件都在内存，不在硬盘上，更新速度飞快
-* **npm run online** 在硬盘上生成dist文件夹，直接发布dist包即可
+* **npm run online** 在硬盘上生成online.config.js中指定的ROOT文件夹，直接发布ROOT包即可
 
 # 说明
 
@@ -53,7 +53,7 @@
 #### 自适应
 
 * 所有less,css中都用px单位，会自动转化成rem，至于rem跟px的变换关系在loading.html中有设置	
-* 个别单位不需要转换的,建议小于4px的都不转:
+* 个别单位不需要转换的,建议**小于4px**的都不转:
 	
 		border:1px solid \#000;/*no*/
 
@@ -88,7 +88,7 @@
 
 * **path:**  会在根目录生成ROOT中指定的目录结构，直接打包上传ROOT目录，(例子中会生成yursile目录)
 
-	如需要index.html单独提出来，直接发布index.html即可，不用再换里面链接
+	如需要index.html单独提出来，直接发布index.html即可，**不用再换里面链接**
 * **publicPath**  会把所有的链接地址替换成线上的地址
 
 
