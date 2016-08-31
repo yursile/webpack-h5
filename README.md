@@ -61,7 +61,7 @@
 
 * 将需要拼接的雪碧图放在img/sprites文件下，运行npm run dev后会自动生成sprite.png和sprite.less
 * sprite.less中的单位依然为px,rem.template.handlebars这个模板生成的less会自动设置background-size
-
+* **texture-packer** 除了生成less文件外，还可以生成json文件，类似于texture-packer的功能，而且是自动生成 
 
 #### base64图片处理
 * 在js中加载的小图会自动转成base64

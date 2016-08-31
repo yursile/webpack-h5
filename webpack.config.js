@@ -31,7 +31,7 @@ module.exports={
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loader: 'react-hot!jsx!babel?presets[]=es2015,presets[]=react,presets[]=stage-0'
+                loader: 'babel?presets[]=es2015,presets[]=stage-0'
             },
             {
                 test: /\.css$/, 
@@ -45,7 +45,11 @@ module.exports={
             {
                 test: /\.(png|jpg)$/, 
                 loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
-            }
+            },
+            // {
+            //     test: /\.json$/, 
+            //     loader: 'json-loader'
+            // }
         ]
     },
     postcss: [autoprefixer],
@@ -62,9 +66,9 @@ module.exports={
             target: {
                 image: path.resolve(__dirname, 'src/img/sprite.png'),
                 css: [
-                // [path.resolve(__dirname, 'dist/spritesmith-generated/sprite.json'), {
-                //     format: 'json_texture'
-                // }],
+                    [path.resolve(__dirname, 'src/img/sprite.json'), {
+                        format: 'json_texture'
+                    }],
                     [path.resolve(__dirname, 'src/css/sprite.less'), {
                         format: 'handlebars_based_template'
                     }]
