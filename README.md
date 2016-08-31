@@ -53,7 +53,9 @@
 #### 自适应
 
 * 所有less,css中都用px单位，会自动转化成rem，至于rem跟px的变换关系在loading.html中有设置	
-
+* 个别单位不需要转换的,建议小于4px的都不转:
+	
+		border:1px solid \#000;/\*no\*/
 
 #### 雪碧图
 
@@ -84,7 +86,7 @@
         chunkFilename: "js/[id].chunk.js"
     },
 
-* **path:**  会在根目录生成ROOT中指定的目录结构，直接打包上传ROOT目录，
+* **path:**  会在根目录生成ROOT中指定的目录结构，直接打包上传ROOT目录，(例子中会生成yursile目录)
 
 	如需要index.html单独提出来，直接发布index.html即可，不用再换里面链接
 * **publicPath**  会把所有的链接地址替换成线上的地址
