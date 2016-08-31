@@ -34,7 +34,7 @@
 	|
 	└── view
 		├── template
-		|	└──testTemplate.html   # 可放全局less样式，比如.abs()
+		|	└──testTemplate.html   # 模板碎片，与下面的loading.html不一样，是在index.js中动态加载的
 		|
 		├── index.html        # 主html
 		├── loading.html      # loading板块的代码，含有自适应、预加载代码
@@ -75,7 +75,7 @@
 在online.config.js中有如下代码
 
 	var ROOT = "yursile/fuckdd/"
-
+	
 
 	output:{
         path: path.join(__dirname,ROOT),
