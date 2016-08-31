@@ -39,7 +39,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
-    "webpack-spritesmith": "^0.2.6"
+    "yu-spritesmith": "^0.0.1"
   },
   "dependencies": {
     "pixi.js": "^4.0.0"

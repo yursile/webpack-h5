@@ -2,6 +2,21 @@
 @import './base/global.less';
 @import './base/reset.css';
 @import './loading.less';
+
+
+/**
+*  在此引入的图片同样会从webpack中过滤
+*  小图会转成base64
+*  大图会在dist目录中生成该图，并且生成的css会替换成publicPath中的路径
+*/
+.base64{
+	background: url(../img/sprites/cloud.png)
+}
+.testimg{
+	background: url(../img/sprites/saucer.png)
+}
+//======================================
+
 .sohu{
 	.sprite(@sohu);
 	.abs(40px,40px)
@@ -27,3 +42,4 @@ html,body,#main{
 		margin-top: 30px;
 	}
 }
+

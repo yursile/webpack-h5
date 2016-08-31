@@ -4,7 +4,7 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-yu-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var SpritesmithPlugin = require('webpack-spritesmith');
+var SpritesmithPlugin = require('yu-spritesmith');
 
 module.exports={
 	entry:{
@@ -13,7 +13,7 @@ module.exports={
 	},
     watch:true,
     output:{
-        path: path.resolve(__dirname,'dist'),
+        path: path.resolve(__dirname,'src'), //往src下输出
         publicPath: "/",//webpack-server-dev下，跟path使用必需为/,不然坑B
         filename: "[name].js",
         chunkFilename: "[id].chunk.js"
@@ -66,12 +66,19 @@ module.exports={
             target: {
                 image: path.resolve(__dirname, 'src/img/sprite.png'),
                 css: [
-                    [path.resolve(__dirname, 'src/img/sprite.json'), {
-                        format: 'json_texture'
-                    }],
-                    [path.resolve(__dirname, 'src/css/sprite.less'), {
-                        format: 'handlebars_based_template'
-                    }]
+                    [
+                        path.resolve(__dirname, 'src/img/sprite.json'), {
+                            format: 'json_texture'
+                        },
+                        // path.resolve(__dirname, 'dist/img/sprite.json'), {
+                        //     format: 'json_texture'
+                        // }
+                    ],
+                    [
+                        path.resolve(__dirname, 'src/css/sprite.less'), {
+                            format: 'handlebars_based_template'
+                        }
+                    ]
                 ]
             },
             apiOptions: {
@@ -94,7 +101,7 @@ module.exports={
 
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
     		favicon:'./src/img/favicon.ico', //favicon路径
-			filename:'index.html',	//生成的html存放路径，相对于 path
+			filename:'index.html',	//生成的html存放路径
 			template:'./src/view/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
@@ -107,7 +114,7 @@ module.exports={
 
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
-    // devServer:{
-    // 	contentBase:'./dist/view'
-    // }
+    devServer:{
+    	contentBase:'./src'
+    }
 };

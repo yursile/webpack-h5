@@ -6,6 +6,7 @@ var cvsContainer = $("#cvsContainer")[0]
 
 export default class PIXITest{
 	constructor(){
+		console.log("rinima")
 		this.stage = new PIXI.Container(0xF0F0F0);
 		this.renderer = new PIXI.CanvasRenderer(WIDTH, HEIGHT);
 		this.renderer.backgroundColor = 0xF0F0F0;
@@ -14,7 +15,7 @@ export default class PIXITest{
 	}
 
 	loadSpriteSheet(){
-		var assetsToLoad = ["../src/img/sprite.json"];
+		var assetsToLoad = ["img/sprite.json"];
 		var loader = new PIXI.loaders.Loader();
 		loader.add(assetsToLoad);
 		loader.once("complete",this.spriteSheetLoaded.bind(this));
@@ -33,7 +34,7 @@ export default class PIXITest{
 
 	spriteSheetLoaded(){
 		console.log("loed")
-		var scoreBg = new PIXI.Sprite.fromFrame("cloud")
+		var scoreBg = new PIXI.Sprite.fromFrame("saucer")
 		this.stage.addChild(scoreBg)
 		webkitRequestAnimationFrame(this.update.bind(this));
 	}

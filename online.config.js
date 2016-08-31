@@ -6,7 +6,10 @@ var HtmlWebpackPlugin = require('html-yu-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var SpritesmithPlugin = require('webpack-spritesmith');
 
-var ROOT = "yursile/fuckdd/"
+var DOMAIN = "http://news.sohu.com/upload/"
+// var DOMAIN = "../"
+// var ROOT = "dist"
+var ROOT = "yursile/fsda42/"
 module.exports={
 	entry:{
     		index:"./src/js/index.js",
@@ -14,7 +17,7 @@ module.exports={
     watch:true,
     output:{
         path: path.join(__dirname,ROOT),
-        publicPath: "http://news.sohu.com/upload/"+ROOT,
+        publicPath:DOMAIN + ROOT,
         filename: "js/[name].js",
         chunkFilename: "js/[id].chunk.js"
     },
@@ -31,11 +34,11 @@ module.exports={
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loader: 'react-hot!jsx!babel?presets[]=es2015,presets[]=react,presets[]=stage-0'
+                loader: 'babel?presets[]=es2015,presets[]=stage-0'
             },
             {
                 test: /\.css$/, 
-                loader:ExtractTextPlugin.extract("style", "css-loader") 
+                loader:ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8") 
                 // loader:ExtractTextPlugin.extract("style", "css-loader?-minimize","px2rem-loader?remUnit=75&remPrecision=8","postcss") 
             },
             {
@@ -64,9 +67,9 @@ module.exports={
             target: {
                 image: path.resolve(__dirname, 'src/img/sprite.png'),
                 css: [
-                // [path.resolve(__dirname, 'dist/spritesmith-generated/sprite.json'), {
-                //     format: 'json_texture'
-                // }],
+                    [path.resolve(__dirname, ROOT,'img/sprite.json'), {
+                        format: 'json_texture'
+                    }],
                     [path.resolve(__dirname, 'src/css/sprite.less'), {
                         format: 'handlebars_based_template'
                     }]
@@ -85,12 +88,12 @@ module.exports={
         }),
         // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vender", /* filename= */"vendor.bundle.js"),
     	new ExtractTextPlugin("css/[name].css"),	//单独使用style标签加载css并设置其路径
-    	new webpack.optimize.UglifyJsPlugin({	//压缩代码
-		    compress: {
-		        warnings: false
-		    },
-		    except: ['$super', '$', 'exports', 'require']	//排除关键字
-		}),
+  //   	new webpack.optimize.UglifyJsPlugin({	//压缩代码
+		//     compress: {
+		//         warnings: false
+		//     },
+		//     except: ['$super', '$', 'exports', 'require']	//排除关键字
+		// }),
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
     		favicon:'./src/img/favicon.ico', //favicon路径
 			filename:'/view/index.html',	//生成的html存放路径，相对于 path
