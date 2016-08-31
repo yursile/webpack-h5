@@ -55,7 +55,7 @@
 * 所有less,css中都用px单位，会自动转化成rem，至于rem跟px的变换关系在loading.html中有设置	
 * 个别单位不需要转换的,建议小于4px的都不转:
 	
-		border:1px solid \#000;/\*no\*/
+		border:1px solid \#000;/*no*/
 
 #### 雪碧图
 
