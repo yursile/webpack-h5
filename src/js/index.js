@@ -4,12 +4,21 @@ import "../css/index.less"
  */
 import $ from "jquery"
 
+/**
+ * 可以加载html
+ */
 import template from "../view/testTemplate.html"
 
+/**
+ * 加载图片
+ * 这个图片小于8k，
+ * 会转成base64码
+ */
 import vcode from "../img/vcode.jpg"
 
-
-
+/**
+ * 引入pixi测试类
+ */
 import PIXITest from "./PIXITest.js"
 
 // 反引号里可以用${}取js变量
@@ -20,12 +29,9 @@ var style = {
 	right:"0"
 }
 
-
-
 var test = new PIXITest();
 
 $("#main").append(template);
-
 
 $("#main").append(`<img id='click' src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
 
@@ -34,4 +40,4 @@ function showCanvas(){
 }
 
 $("#click").on("click",showCanvas)
-// $("#main").append(json.)
+

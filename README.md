@@ -9,7 +9,7 @@
 # get started
 * **npm run dev** 在本地8080端口起测试服务,引用的所有文件都在内存，不在硬盘上，更新速度飞快
 * **npm run online** 在硬盘上生成online.config.js中指定的ROOT文件夹，直接发布ROOT包即可
-	
+
 # 说明
 
 
@@ -22,7 +22,7 @@
 ├── rem.template.handlebars   # 雪碧图生成模板
 └── src
     ├── css
-	|	├── preset.less   # 可放全局less样式，比如.abs()
+	|	├── preset.less       # 可放全局less样式，比如.abs()
 	|	├── index.less        # 页面主要样式
 	|	├── loading.less      # loading
 	|	└── sprite.less       # 雪碧图生成的样式
@@ -107,5 +107,6 @@ new HtmlWebpackPlugin({
     headBlockFile:"./src/view/loading.html"  //把这个目录下的代码块放到body开始标签之后，通常放loading
 })
 ```
-#更新日志
+# 更新日志
 * **解决windows shell问题**
+* **添加Pixi适配**
