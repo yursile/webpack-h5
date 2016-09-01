@@ -1,0 +1,94 @@
+{
+    "frames": {
+        "close": {
+            "frame": {
+                "x": 137,
+                "y": 97,
+                "w": 46,
+                "h": 45
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 137,
+                "y": 97,
+                "w": 46,
+                "h": 45
+            },
+            "sourceSize": {
+                "w": 46,
+                "h": 45
+            }
+        },
+        "cloud": {
+            "frame": {
+                "x": 0,
+                "y": 97,
+                "w": 137,
+                "h": 49
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 97,
+                "w": 137,
+                "h": 49
+            },
+            "sourceSize": {
+                "w": 137,
+                "h": 49
+            }
+        },
+        "saucer": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 218,
+                "h": 97
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 218,
+                "h": 97
+            },
+            "sourceSize": {
+                "w": 218,
+                "h": 97
+            }
+        },
+        "sohu": {
+            "frame": {
+                "x": 0,
+                "y": 146,
+                "w": 114,
+                "h": 57
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 146,
+                "w": 114,
+                "h": 57
+            },
+            "sourceSize": {
+                "w": 114,
+                "h": 57
+            }
+        }
+    },
+    "meta": {
+        "app": "yu-spritesheet-templates",
+        "version": "10.1.5",
+        "image": "../img/sprite.png",
+        "scale": 1,
+        "size": {
+            "w": 218,
+            "h": 203
+        }
+    }
+}

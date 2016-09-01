@@ -27,6 +27,11 @@ var test = new PIXITest();
 $("#main").append(template);
 
 
-$("#main").append(`<img src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
+$("#main").append(`<img id='click' src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
 
+function showCanvas(){
+	$("#cvsContainer").show();
+}
+
+$("#click").on("click",showCanvas)
 // $("#main").append(json.)

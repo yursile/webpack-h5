@@ -21,9 +21,7 @@
 ├── rem.template.handlebars   # 雪碧图生成模板
 └── src
     ├── css
-	|	├── base
-	|	|	├── global.less   # 可放全局less样式，比如.abs()
-	|	|	└── reset.less    # 重置浏览器默认样式，比如h1的margin,padding
+	|	├── preset.less   # 可放全局less样式，比如.abs()
 	|	├── index.less        # 页面主要样式
 	|	├── loading.less      # loading
 	|	└── sprite.less       # 雪碧图生成的样式
@@ -63,6 +61,12 @@
 
 #### base64图片处理
 * 在js中加载的小图会自动转成base64
+
+
+####  pixi
+* 利用pageUtil缩放canvas所在容器，pixi代码的尺寸都按照640*1136
+
+		new window.pageUtil("#cvsContainer").response();
 
 ---------------------------------------
 

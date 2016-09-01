@@ -1,0 +1,105 @@
+.abs(@l:0,@t:0){
+	left:@l;
+	top:@t;
+	position: absolute;	
+}
+.hide(){
+  display: none;
+}
+.show(){
+  display: block;
+}
+
+
+// 绝对定位
+// 占父元素100%宽高
+.wrapper(){
+	.abs();
+	width: 100%;
+	height: 100%;
+}
+
+
+
+//将文字放在了div里，
+// div默认为100%宽;
+.abs_text(@t){
+	.abs(0,@t);
+	right:0;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+}
+
+//水平居中，顶部自定义
+.abs_box(@t:0){
+  .abs(0,@t);
+  right: 0;
+  margin: auto;
+}
+
+//启动3D加速
+.ani_a(){
+	transform:translateZ(0);
+}
+
+
+//呼吸效果  半透明到透明;
+.breath{
+  animation-name:breath;
+  @keyframes breath{
+    0%{
+      opacity: 1
+    }
+
+    40%{
+      opacity: 0.5
+    }
+
+    80%{
+      opacity: 1
+    }
+
+  
+    100%{
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+/////////////////////
+// 浏览器reset.css //
+////////////////////
+
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,hr{margin:0; padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+li{list-style:none;}
+fieldset,img{border:0;}
+q:before,q:after{content:'';}
+input,textarea{outline-style:none;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none}
+address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+legend{color:#000;}
+abbr,acronym {border:0;font-variant:normal;}
+a{text-decoration:none; color:#999999;}
+a:hover{text-decoration:none;}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearLeft{
+  clear:left;
+  }
+.clearRight{
+  clear:right;
+  }

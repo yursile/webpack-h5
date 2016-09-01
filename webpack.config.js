@@ -8,8 +8,7 @@ var SpritesmithPlugin = require('yu-spritesmith');
 
 module.exports={
 	entry:{
-		index:"./src/js/index.js",
-        // response:"./src/js/tools/response.js" //自适应脚本入口 
+		index:"./src/js/index.js"
 	},
     watch:true,
     output:{
@@ -55,7 +54,7 @@ module.exports={
     postcss: [autoprefixer],
     plugins:[
 
-         // new  webpack.optimize.CommonsChunkPlugin('common.js', ['index', 'response']),
+        // new  webpack.optimize.CommonsChunkPlugin('common.js', ['index', 'response']),
 
         //sprites 
         new SpritesmithPlugin({

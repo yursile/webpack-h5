@@ -89,7 +89,7 @@ module.exports={
         }),
         // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vender", /* filename= */"vendor.bundle.js"),
     	new ExtractTextPlugin("css/[name].css"),	//单独使用style标签加载css并设置其路径
-  //   	new webpack.optimize.UglifyJsPlugin({	//压缩代码
+        // new webpack.optimize.UglifyJsPlugin({	//压缩代码
 		//     compress: {
 		//         warnings: false
 		//     },

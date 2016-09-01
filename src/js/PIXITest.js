@@ -1,8 +1,11 @@
 import PIXI from "pixi.js"
 import $ from "jquery"
+
+
 var WIDTH  = 640;
 var HEIGHT = 1136;
 var cvsContainer = $("#cvsContainer")[0]
+new window.pageUtil("#cvsContainer").response();
 
 export default class PIXITest{
 	constructor(){
@@ -28,7 +31,9 @@ export default class PIXITest{
 	}
 
 	spriteSheetLoaded(){
-		var scoreBg = new PIXI.Sprite.fromFrame("saucer")
+		var scoreBg = new PIXI.Sprite.fromFrame("sohu")
+		scoreBg.position.x = 50
+		scoreBg.position.y = 250
 		this.stage.addChild(scoreBg)
 		webkitRequestAnimationFrame(this.update.bind(this));
 	}
