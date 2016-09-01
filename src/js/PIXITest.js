@@ -1,7 +1,7 @@
 import PIXI from "pixi.js"
 import $ from "jquery"
-var WIDTH = window.SCREEN_WIDTH = 640;
-var HEIGHT = window.SCREEN_HEIGHT =1136;
+var WIDTH  = 640;
+var HEIGHT = 1136;
 var cvsContainer = $("#cvsContainer")[0]
 
 export default class PIXITest{
@@ -13,27 +13,21 @@ export default class PIXITest{
 		cvsContainer.appendChild(this.renderer.view);
 		this.loadSpriteSheet();
 	}
-
+	/**
+	 * pixi内置loader的json路径
+	 * 此文件中加载json的相对路径放在线上后是以index.html所在目录为参考的
+	 * 在index.html目录引入就是img/sprite.json 没有../
+	 */
 	loadSpriteSheet(){
 		var assetsToLoad = ["img/sprite.json"];
 		var loader = new PIXI.loaders.Loader();
 		loader.add(assetsToLoad);
 		loader.once("complete",this.spriteSheetLoaded.bind(this));
 		loader.load();
-		// var _this = this;
-
-		// require.ensure(["../img/sprite.json"],function(require){
-		// 	var baseTexture = require("../img/sprite.json");
-		// 	console.log(baseTexture)
-		// 	new PIXI.BaseTexture(baseTexture)
-		// 	console.log("loading")
-		// 	_this.spriteSheetLoaded();
-		// });
 	  
 	}
 
 	spriteSheetLoaded(){
-		console.log("loed")
 		var scoreBg = new PIXI.Sprite.fromFrame("saucer")
 		this.stage.addChild(scoreBg)
 		webkitRequestAnimationFrame(this.update.bind(this));

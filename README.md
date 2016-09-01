@@ -9,7 +9,6 @@
 # get started
 * **npm run dev** 在本地8080端口起测试服务,引用的所有文件都在内存，不在硬盘上，更新速度飞快
 * **npm run online** 在硬盘上生成online.config.js中指定的ROOT文件夹，直接发布ROOT包即可
-
 # 说明
 
 
@@ -32,11 +31,10 @@
 	├── js
 	|	└── index.js          # 主要的index.js
 	|
+	├── index.html            # 主html,不用在里面写loading,自适应,统计的代码
+	|
 	└── view
-		├── template
-		|	└──testTemplate.html   # 模板碎片，与下面的loading.html不一样，是在index.js中动态加载的
-		|
-		├── index.html        # 主html
+		├── testTemplate.html # 模板碎片，与下面的loading.html不一样，是在index.js中动态加载的
 		├── loading.html      # loading板块的代码，含有自适应、预加载代码
 		└── statistics.html   # 所有的统计代码块
 
@@ -78,7 +76,6 @@
 
 	var ROOT = "yursile/fuckdd/"
 	
-
 	output:{
         path: path.join(__dirname,ROOT),
         publicPath: "http://news.sohu.com/upload/"+ROOT,

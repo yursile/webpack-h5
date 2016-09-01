@@ -4,12 +4,13 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-yu-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var SpritesmithPlugin = require('webpack-spritesmith');
+var SpritesmithPlugin = require('yu-spritesmith');
 
-var DOMAIN = "http://news.sohu.com/upload/"
-// var DOMAIN = "../"
-// var ROOT = "dist"
-var ROOT = "yursile/fsda42/"
+
+var DOMAIN = "../"
+var ROOT = "dist/"
+// var DOMAIN = "http://news.sohu.com/upload/"
+// var ROOT = "yursile/laondow/"
 module.exports={
 	entry:{
     		index:"./src/js/index.js",
@@ -47,7 +48,7 @@ module.exports={
             },
             {
                 test: /\.(png|jpg)$/, 
-                loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+                loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             }
         ]
     },
@@ -95,17 +96,17 @@ module.exports={
 		//     except: ['$super', '$', 'exports', 'require']	//排除关键字
 		// }),
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
-    		favicon:'./src/img/favicon.ico', //favicon路径
-			filename:'/view/index.html',	//生成的html存放路径，相对于 path
-			template:'./src/view/index.html',	//html模板路径
+    		// favicon:'./src/img/favicon.ico', //favicon路径
+			filename:'/index.html',	//生成的html存放路径 /相对于项目目录
+			template:'./src/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
             blockFile:"./src/view/statistics.html",
             headBlockFile:"./src/view/loading.html"
 		}),
-        // new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
     // devServer:{
-    // 	contentBase:'./dist/view'
+    // 	contentBase:ROOT
     // }
 };

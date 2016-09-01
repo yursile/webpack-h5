@@ -44,7 +44,7 @@ module.exports={
             },
             {
                 test: /\.(png|jpg)$/, 
-                loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+                loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             },
             // {
             //     test: /\.json$/, 
@@ -69,10 +69,7 @@ module.exports={
                     [
                         path.resolve(__dirname, 'src/img/sprite.json'), {
                             format: 'json_texture'
-                        },
-                        // path.resolve(__dirname, 'dist/img/sprite.json'), {
-                        //     format: 'json_texture'
-                        // }
+                        }
                     ],
                     [
                         path.resolve(__dirname, 'src/css/sprite.less'), {
@@ -100,9 +97,9 @@ module.exports={
         
 
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
-    		favicon:'./src/img/favicon.ico', //favicon路径
+    		// favicon:'./src/img/favicon.ico', //favicon路径
 			filename:'index.html',	//生成的html存放路径
-			template:'./src/view/index.html',	//html模板路径
+			template:'./src/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
             // heads:['response'],

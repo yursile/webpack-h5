@@ -4,7 +4,7 @@ import "../css/index.less"
  */
 import $ from "jquery"
 
-import template from "../view/template/testTemplate.html"
+import template from "../view/testTemplate.html"
 
 import vcode from "../img/vcode.jpg"
 
