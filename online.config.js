@@ -7,10 +7,10 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var SpritesmithPlugin = require('yu-spritesmith');
 
 
-var DOMAIN = "../"
-var ROOT = "dist/"
-// var DOMAIN = "http://news.sohu.com/upload/"
-// var ROOT = "yursile/laondow/"
+// var DOMAIN = "../"
+// var ROOT = "dist/"
+var DOMAIN = "http://news.sohu.com/upload/"
+var ROOT = "yursile/laondow/"
 module.exports={
 	entry:{
     		index:"./src/js/index.js",
@@ -89,12 +89,12 @@ module.exports={
         }),
         // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vender", /* filename= */"vendor.bundle.js"),
     	new ExtractTextPlugin("css/[name].css"),	//单独使用style标签加载css并设置其路径
-        // new webpack.optimize.UglifyJsPlugin({	//压缩代码
-		//     compress: {
-		//         warnings: false
-		//     },
-		//     except: ['$super', '$', 'exports', 'require']	//排除关键字
-		// }),
+        new webpack.optimize.UglifyJsPlugin({	//压缩代码
+		    compress: {
+		        warnings: false
+		    },
+		    except: ['$super', '$', 'exports', 'require']	//排除关键字
+		}),
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
     		// favicon:'./src/img/favicon.ico', //favicon路径
 			filename:'/index.html',	//生成的html存放路径 /相对于项目目录
@@ -104,7 +104,7 @@ module.exports={
             blockFile:"./src/view/statistics.html",
             headBlockFile:"./src/view/loading.html"
 		}),
-        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+        // new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
     // devServer:{
     // 	contentBase:ROOT
