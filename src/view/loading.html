@@ -1,10 +1,5 @@
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://news.sohu.com/upload/ky/resloader.js"></script>
-<script type="text/javascript">
-	var html = document.documentElement;
-	var windowWidth = html.clientWidth;
-	html.style.fontSize = windowWidth / 6.4 + 'px'; 
-</script>
 
 <div class="loading">
 	<svg class="icon-loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="black">
@@ -28,6 +23,13 @@
 </div>
 
 <script type="text/javascript">
+	/**
+	 * resloader曝露两个全局对象：
+	 * resLoader
+	 * pageUtil.	pageUtil新增了boolean属性，rem=true，会改变html的font-size
+	 */
+	pageUtil.rem = true;
+
 	var loader = new resLoader({
 	    resources: [
 			"http://news.sohu.com/upload/yursile/dushue/img/shop11.png",
@@ -45,5 +47,5 @@
 	      },3000);
 	    }
   	});
-  loader.start();
+  	loader.start();
 </script>
