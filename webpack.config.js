@@ -8,6 +8,7 @@ var SpritesmithPlugin = require('yu-spritesmith');
 
 module.exports={
 	entry:{
+        polyfill:'babel-polyfill',
 		index:"./src/js/index.js"
 	},
     watch:true,
