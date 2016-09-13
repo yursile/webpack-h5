@@ -18,6 +18,7 @@ module.exports={
         filename: "[name].js",
         chunkFilename: "[id].chunk.js"
     },
+    devtool: 'inline-source-map',
     externals: {
         jquery: "jQuery"
     },

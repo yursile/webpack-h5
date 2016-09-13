@@ -64,7 +64,8 @@
 
 #### 雪碧图
 
-* 将需要拼接的雪碧图放在img/sprites文件下，运行npm run dev后会自动生成sprite.png和sprite.less
+* 将需要拼接的雪碧图放在img/sprites文件夹下，运行npm run dev后会自动生成sprite.png和sprite.less
+* 此后sprites文件夹下的的文件变换会自动更改上述文件，意味着切下一张小图后，可以直接在less中引用，**且不用在less里写图的宽高，地址**
 * sprite.less中的单位依然为px,rem.template.handlebars这个模板生成的less会自动设置background-size
 * **texture-packer** 除了生成less文件外，还可以生成json文件，类似于texture-packer的功能，而且是自动生成 
 
