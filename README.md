@@ -55,6 +55,7 @@
 * loading.html指loading代码的模块，运行时index.html会插入loading.html中的内容，详细配置见hmtl-yu-plugin
 * statistics.html指统计代码的模块，跟loading一样会插入到index.html中，不过是插在body结束标签前，
 
+****
 #### 自适应
 
 * 所有less,css中都用px单位，会自动转化成rem，至于rem跟px的变换关系在loading.html中有设置	
@@ -62,17 +63,20 @@
 	
 		border:1px solid \#000;/*no*/
 
+****		
+
 #### 雪碧图
+
 
 * 将需要拼接的雪碧图放在img/sprites文件夹下，运行npm run dev后会自动生成sprite.png和sprite.less
 * 此后sprites文件夹下的的文件变换会自动更改上述文件，意味着切下一张小图后，可以直接在less中引用，**且不用在less里写图的宽高，地址**
 * sprite.less中的单位依然为px,rem.template.handlebars这个模板生成的less会自动设置background-size
 * **texture-packer** 除了生成less文件外，还可以生成json文件，类似于texture-packer的功能，而且是自动生成 
-
+****
 #### base64图片处理
 * 在js中加载的小图会自动转成base64
 
-
+****
 ####  pixi
 * 利用pageUtil缩放canvas所在容器，pixi代码的尺寸都按照640*1136
 
@@ -102,7 +106,7 @@
 	如需要index.html单独提出来，直接发布index.html即可，**不用再换里面链接**
 * **publicPath**  会把所有的链接地址替换成线上的地址
 
-
+****
 	
 ## 关于[hmtl-yu-plugin](https://github.com/yursile/html-yu-plugin)
 
@@ -115,10 +119,13 @@ new HtmlWebpackPlugin({
 	heads:['response'],  //将chunck为response的js放在头部
     blockFile:"./src/view/statistics.html", //把这个目录下的代码块放到body结束标签之前，  通常放统计代码
     headBlockFile:"./src/view/loading.html",  //把这个目录下的代码块放到body开始标签之后，通常放loading
-	replaceUrl:"http://news.sohu.com/upload/yursile/smg/" //替换index.html中的线上地址
+	replaceUrl:DOMAIN + ROOT    //替换index.html中的线上地址
 })
 ```
 # 更新日志
 * **解决windows shell问题**
 * **添加Pixi适配**
 * **添加线上地址转换**
+
+
+#### Author *@yursile*
