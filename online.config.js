@@ -102,7 +102,8 @@ module.exports={
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
             blockFile:"./src/view/statistics.html",
-            headBlockFile:"./src/view/loading.html"
+            headBlockFile:"./src/view/loading.html",
+            replaceUrl:DOMAIN + ROOT
 		}),
         // new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
