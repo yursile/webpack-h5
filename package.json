@@ -28,6 +28,8 @@
     "eslint": "^3.3.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-font-spider": "^0.3.6",
     "html-loader": "^0.4.0",
     "html-yu-plugin": "^1.0.3",
     "json-loader": "^0.5.4",

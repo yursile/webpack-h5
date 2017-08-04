@@ -5,6 +5,7 @@
 * **rem**
 * **less**
 * **htmltemplate**
+* **fontSpider**
 
 # get started
 * 依赖webpack,如没有安装,**npm install -g webpack webpack-dev-server**
@@ -54,6 +55,15 @@
 
 * loading.html指loading代码的模块，运行时index.html会插入loading.html中的内容，详细配置见hmtl-yu-plugin
 * statistics.html指统计代码的模块，跟loading一样会插入到index.html中，不过是插在body结束标签前，
+
+****
+#### font
+
+* 把特殊字体放在font下
+* 所需提取的字放在font.html中
+* 生成好后，其他地方引用font中的字体就行了	
+		
+		$ gulp
 
 ****
 #### 自适应
